@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var sex = "boy"
-    @State var unit = "kg"
-    @State var weightFirstDigit = 60
-    @State var weightSecondDigit = 1
     
-    @State private var result = ""
-    @State var age: Float = 6.0
+    @StateObject private var viewModel = bmiViewModel()
+    
+    
+    
+    
+    
     
     
     
     var body: some View {
-        
+    
         
         
         
@@ -29,7 +29,7 @@ struct ContentView: View {
             Color.white
                 .ignoresSafeArea()
             
-            
+            NavigationView {
         
             VStack {
                 VStack {
@@ -42,13 +42,13 @@ struct ContentView: View {
                 Spacer()
                     .frame(height: 30)
                 
-                sexView(sex: $sex)
+                    sexView(sex: $viewModel.sex)
                  
                 Spacer()
                     .frame(height: 20)
                     
                 
-                    units(unit: $unit)
+                    units(unit: $viewModel.unit)
                 
                 Spacer()
                     .frame(height: 20)
@@ -57,14 +57,43 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        wheelView(weightFirstDigit: $weightFirstDigit, weightSecondDigit: $weightSecondDigit)
+                        if viewModel.unit == "metric" {
+                            
+                            singleWheelView(firstDigit: $viewModel.heightFirstDigit, wheelTitle: viewModel.heightTitle)
+                            
+                            Spacer()
+                                .frame(width: 30)
+                            
+                            
+                            
+                            wheelView(firstDigit: $viewModel.weightFirstDigit, secondDigit: $viewModel.weightSecondDigit, firstDigitText: viewModel.weightFirstDigitText, secondDigitText: viewModel.weightSecondDigitText,  wheelTitle: viewModel.weightTitle)
+                                
+                           
+                            Spacer()
                         
-                        Spacer()
-                            .frame(width: 30)
                         
-                        wheelView(weightFirstDigit: $weightFirstDigit, weightSecondDigit: $weightSecondDigit)
+                        } else {
+                            wheelView(firstDigit: $viewModel.weightFirstDigit, secondDigit: $viewModel.weightSecondDigit, firstDigitText: viewModel.heightFirstDigitText, secondDigitText: viewModel.heightSecondDigitText, wheelTitle: viewModel.heightTitle)
+                            
+                            Spacer()
+                                .frame(width: 30)
+                            
+                            
+                            
+                            wheelView(firstDigit: $viewModel.weightFirstDigit, secondDigit: $viewModel.weightSecondDigit, firstDigitText: viewModel.weightLbsText, secondDigitText: viewModel.weightLbsSecondText,  wheelTitle: viewModel.weightTitle)
+                                
+                           
+                            Spacer()
+                            
+                        }
                         
-                        Spacer()
+                    
+                        
+                       
+                        
+                        
+                        
+                       
                         
                         
                         
@@ -74,17 +103,28 @@ struct ContentView: View {
                 Spacer()
                     .frame(height: 20)
                 
-                    ageSlider(age: $age)
+                    ageSlider(age: $viewModel.age)
                 
                 Spacer()
                     .frame(height: 40)
                 
-                }
+                }  // vstackchild
+                
+               
+                NavigationLink(destination: resultView(sex: viewModel.sex), isActive: $viewModel.isShowingResultsView) { EmptyView() }
+                
                 
                 Button("Calculate Bmi") {
                   
                     print("glkjdf")
+                    self.viewModel.isShowingResultsView = true
+                    
+                    
                 }
+                    
+                
+                    
+                
                 
                 .font(.title)
                 .foregroundColor(.white)
@@ -94,22 +134,27 @@ struct ContentView: View {
                 
                 .cornerRadius(15.0)
                 
-                Text("can \(unit) & \(sex) & \(Int(age)) & \(weightFirstDigit)")
+                Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age)) & \(viewModel.weightFirstDigit)")
+                
+                 
                 
                 
                 
-            } // vstack
+            } // vstack master
+            .navigationTitle("")
             
             
-            
+                
             
       
         } // zstack
         
-        
+        } // navigationView
         
         
     }
+    
+    
         
 }
 

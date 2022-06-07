@@ -11,10 +11,13 @@
 		362A60DA283278400001C08B /* units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362A60D9283278400001C08B /* units.swift */; };
 		363CB6202838D12900A32BD3 /* ageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363CB61F2838D12900A32BD3 /* ageSlider.swift */; };
 		36547A092832A8BE009D9375 /* wheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36547A082832A8BD009D9375 /* wheelView.swift */; };
+		36AC6ECF284F432E0043DB9F /* singleWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AC6ECE284F432E0043DB9F /* singleWheelView.swift */; };
+		36AC6ED1284F7D790043DB9F /* bmiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AC6ED0284F7D790043DB9F /* bmiViewModel.swift */; };
 		36B2FF8E28253DA0007F1F82 /* Bmi_ChildrenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B2FF8D28253DA0007F1F82 /* Bmi_ChildrenApp.swift */; };
 		36B2FF9028253DA0007F1F82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B2FF8F28253DA0007F1F82 /* ContentView.swift */; };
 		36B2FF9228253DA4007F1F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B2FF9128253DA4007F1F82 /* Assets.xcassets */; };
 		36B2FF9528253DA4007F1F82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B2FF9428253DA4007F1F82 /* Preview Assets.xcassets */; };
+		36DFF11128463B5E00D5C881 /* resultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFF11028463B5E00D5C881 /* resultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,11 +25,14 @@
 		362A60D9283278400001C08B /* units.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = units.swift; sourceTree = "<group>"; };
 		363CB61F2838D12900A32BD3 /* ageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ageSlider.swift; sourceTree = "<group>"; };
 		36547A082832A8BD009D9375 /* wheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wheelView.swift; sourceTree = "<group>"; };
+		36AC6ECE284F432E0043DB9F /* singleWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleWheelView.swift; sourceTree = "<group>"; };
+		36AC6ED0284F7D790043DB9F /* bmiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bmiViewModel.swift; sourceTree = "<group>"; };
 		36B2FF8A28253DA0007F1F82 /* Bmi Children.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bmi Children.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B2FF8D28253DA0007F1F82 /* Bmi_ChildrenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bmi_ChildrenApp.swift; sourceTree = "<group>"; };
 		36B2FF8F28253DA0007F1F82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		36B2FF9128253DA4007F1F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B2FF9428253DA4007F1F82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		36DFF11028463B5E00D5C881 /* resultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +67,10 @@
 			children = (
 				36B2FF8D28253DA0007F1F82 /* Bmi_ChildrenApp.swift */,
 				36B2FF8F28253DA0007F1F82 /* ContentView.swift */,
+				36AC6ED0284F7D790043DB9F /* bmiViewModel.swift */,
+				36AC6ECE284F432E0043DB9F /* singleWheelView.swift */,
 				363CB61F2838D12900A32BD3 /* ageSlider.swift */,
+				36DFF11028463B5E00D5C881 /* resultView.swift */,
 				36547A082832A8BD009D9375 /* wheelView.swift */,
 				362A60D9283278400001C08B /* units.swift */,
 				362A60D728326C900001C08B /* sexView.swift */,
@@ -149,8 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36AC6ED1284F7D790043DB9F /* bmiViewModel.swift in Sources */,
 				36547A092832A8BE009D9375 /* wheelView.swift in Sources */,
 				362A60D828326C900001C08B /* sexView.swift in Sources */,
+				36AC6ECF284F432E0043DB9F /* singleWheelView.swift in Sources */,
+				36DFF11128463B5E00D5C881 /* resultView.swift in Sources */,
 				363CB6202838D12900A32BD3 /* ageSlider.swift in Sources */,
 				362A60DA283278400001C08B /* units.swift in Sources */,
 				36B2FF9028253DA0007F1F82 /* ContentView.swift in Sources */,

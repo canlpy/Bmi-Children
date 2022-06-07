@@ -23,6 +23,10 @@ struct units: View {
     
     
     
+    
+    
+    
+    
 
     
    
@@ -46,6 +50,8 @@ struct units: View {
                 kgColor = activeColor
                 inchColor = passiveColor
                 unit = "metric"
+               
+                
                 
             }
           
@@ -70,6 +76,9 @@ struct units: View {
             inchColor = activeColor
             kgColor = passiveColor
                 unit = "imperial"
+            
+            
+            
             }
             .foregroundColor(.black)
             .padding(10.0)
