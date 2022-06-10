@@ -13,149 +13,138 @@ struct ContentView: View {
     @StateObject private var viewModel = bmiViewModel()
     
     
-    
-    
-    
-    
-    
-    
     var body: some View {
-    
         
-        
-        
-        
-        ZStack {
+      ZStack {
             Color.white
                 .ignoresSafeArea()
             
             NavigationView {
-        
-            VStack {
+                
                 VStack {
-                Text("Bmi For Children")
-                    .font(.largeTitle)
-                    .fontWeight(.medium)
-                
-                //heading
-                
-                Spacer()
-                    .frame(height: 30)
-                
-                    sexView(sex: $viewModel.sex)
-                 
-                Spacer()
-                    .frame(height: 20)
-                    
-                
-                    units(unit: $viewModel.unit)
-                
-                Spacer()
-                    .frame(height: 20)
-                
-                    HStack {
+                    VStack {
+                        Text("Bmi For Children")
+                            .font(.largeTitle)
+                            .fontWeight(.medium)
+                        
+                        //heading
                         
                         Spacer()
+                            .frame(height: 30)
                         
-                        if viewModel.unit == "metric" {
-                            
-                            singleWheelView(firstDigit: $viewModel.heightFirstDigit, wheelTitle: viewModel.heightTitle)
+                        sexView(sex: $viewModel.sex)
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
+                        
+                        units(unit: $viewModel.unit)
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
+                        HStack {
                             
                             Spacer()
-                                .frame(width: 30)
                             
-                            
-                            
-                            wheelView(firstDigit: $viewModel.weightFirstDigit, secondDigit: $viewModel.weightSecondDigit, firstDigitText: viewModel.weightFirstDigitText, secondDigitText: viewModel.weightSecondDigitText,  wheelTitle: viewModel.weightTitle)
+                            if viewModel.unit == "metric" {
                                 
-                           
-                            Spacer()
-                        
-                        
-                        } else {
-                            wheelView(firstDigit: $viewModel.weightFirstDigit, secondDigit: $viewModel.weightSecondDigit, firstDigitText: viewModel.heightFirstDigitText, secondDigitText: viewModel.heightSecondDigitText, wheelTitle: viewModel.heightTitle)
-                            
-                            Spacer()
-                                .frame(width: 30)
-                            
-                            
-                            
-                            wheelView(firstDigit: $viewModel.weightFirstDigit, secondDigit: $viewModel.weightSecondDigit, firstDigitText: viewModel.weightLbsText, secondDigitText: viewModel.weightLbsSecondText,  wheelTitle: viewModel.weightTitle)
+                                singleWheelView(firstDigit: $viewModel.heightFirstMetricDigit, wheelTitle: viewModel.heightTitle)
                                 
-                           
-                            Spacer()
+                                Spacer()
+                                    .frame(width: 30)
+                                
+                                
+                                
+                                wheelView(firstDigit: $viewModel.weightFirstMetricDigit, secondDigit: $viewModel.weightSecondMetricDigit, firstDigitText: viewModel.weightFirstDigitText, secondDigitText: viewModel.weightSecondDigitText, firstDigitArray: viewModel.weightKg, secondDigitArray: viewModel.weightGr,  wheelTitle: viewModel.weightTitle)
+                                
+                                
+                                Spacer()
+                                
+                                
+                                
+                                
+                            } else {
+                                wheelView(firstDigit: $viewModel.heightFirstImperialDigit, secondDigit: $viewModel.heightSecondImperialDigit, firstDigitText: viewModel.heightFirstDigitText, secondDigitText: viewModel.heightSecondDigitText, firstDigitArray: viewModel.heightFt, secondDigitArray: viewModel.heightInch, wheelTitle: viewModel.heightTitle)
+                                
+                                Spacer()
+                                    .frame(width: 30)
+                                
+                                
+                                
+                                wheelView(firstDigit: $viewModel.weightFirstImperialDigit, secondDigit: $viewModel.weightSecondImperialDigit, firstDigitText: viewModel.weightLbsText, secondDigitText: viewModel.weightLbsSecondText, firstDigitArray: viewModel.weightLbsFirst, secondDigitArray: viewModel.weightLbsSecond, wheelTitle: viewModel.weightTitle)
+                                
+                                
+                                Spacer()
+                                
+                            }
                             
-                        }
-                        
-                    
-                        
-                       
-                        
-                        
-                        
-                       
-                        
-                        
-                        
-                    } // hstack for weight & height
-                    
-                
-                Spacer()
-                    .frame(height: 20)
-                
-                    ageSlider(age: $viewModel.age)
-                
-                Spacer()
-                    .frame(height: 40)
-                
-                }  // vstackchild
-                
-               
-                NavigationLink(destination: resultView(sex: viewModel.sex), isActive: $viewModel.isShowingResultsView) { EmptyView() }
-                
-                
-                Button("Calculate Bmi") {
-                  
-                    print("glkjdf")
-                    self.viewModel.isShowingResultsView = true
-                    
-                    
-                }
-                    
-                
-                    
-                
-                
-                .font(.title)
-                .foregroundColor(.white)
-                
-                .frame(width: 300, height: 70)
-                .background(.red)
-                
-                .cornerRadius(15.0)
-                
-                Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age)) & \(viewModel.weightFirstDigit)")
-                
-                 
-                
-                
-                
-            } // vstack master
-            .navigationTitle("")
+                            
+                            
+    
             
-            
+                            
+                        } // hstack for weight & height
+                        
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
+                        ageSlider(age: $viewModel.age)
+                        
+                        Spacer()
+                            .frame(height: 40)
+                        
+                    }  // vstackchild
+                    
+                    
+                    NavigationLink(destination: resultView(sex: viewModel.sex), isActive: $viewModel.isShowingResultsView) { EmptyView() }
+                    
+                    
+                    Button("Calculate Bmi") {
+                        
+                        print("glkjdf")
+                        self.viewModel.isShowingResultsView = true
+                        
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                    .font(.title)
+                    .foregroundColor(.white)
+                    
+                    .frame(width: 300, height: 70)
+                    .background(.red)
+                    
+                    .cornerRadius(15.0)
+                    
+                    Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age)) & \(viewModel.convertToDouble(first: viewModel.weightFirstImperialDigit, second: viewModel.weightSecondImperialDigit))")
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                } // vstack master
+                .navigationTitle("")
                 
+                
+                
+                
+                
+            } // zstack
             
-      
-        } // zstack
-        
         } // navigationView
         
         
     }
     
     
-        
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

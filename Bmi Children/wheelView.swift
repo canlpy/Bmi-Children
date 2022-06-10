@@ -11,6 +11,8 @@ extension UIPickerView {   open override var intrinsicContentSize: CGSize {     
 
 struct wheelView: View {
     
+    @StateObject private var viewModel = bmiViewModel()
+    
     
     @Binding var firstDigit: Int
    
@@ -19,13 +21,17 @@ struct wheelView: View {
     var firstDigitText: String 
     var secondDigitText: String
     
+    @State var firstDigitArray =  1...10
+    @State var secondDigitArray =  1...10
     
     
-    @State var weightKg = 10...200
-    @State var weightGr = 1...9
     
-    @State var weightFt = 2...7
-    @State var weightInch = 0...11
+    
+   // @State var weightKg = 10...200
+  //  @State var weightGr = 1...9
+    
+  //  @State var heightFt = 2...7
+  //  @State var heightInch = 0...11
     @State var wheelTitle: String
 
     
@@ -56,8 +62,8 @@ struct wheelView: View {
         
         HStack(spacing: 0) {
             Spacer()
-            Picker("mee", selection: $firstDigit) {
-                ForEach(weightKg, id:\.self) {
+            Picker("", selection: $firstDigit) {
+                ForEach(firstDigitArray, id:\.self) {
                     Text("\($0)")
                 }
                 
@@ -77,7 +83,7 @@ struct wheelView: View {
                 
             
             Picker("", selection: $secondDigit) {
-                ForEach(weightGr, id:\.self) {
+                ForEach(secondDigitArray, id:\.self) {
                     Text("\($0)")
                 
                 }
