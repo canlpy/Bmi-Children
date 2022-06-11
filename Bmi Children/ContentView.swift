@@ -49,7 +49,7 @@ struct ContentView: View {
                             
                             if viewModel.unit == "metric" {
                                 
-                                singleWheelView(firstDigit: $viewModel.heightFirstMetricDigit, wheelTitle: viewModel.heightTitle)
+                                singleWheelView(firstDigit: $viewModel.heightFirstMetricDigit, wheelTitle: viewModel.heightTitle, firstDigitArray: viewModel.heightCm)
                                 
                                 Spacer()
                                     .frame(width: 30)
@@ -72,7 +72,8 @@ struct ContentView: View {
                                 
                                 
                                 
-                                wheelView(firstDigit: $viewModel.weightFirstImperialDigit, secondDigit: $viewModel.weightSecondImperialDigit, firstDigitText: viewModel.weightLbsText, secondDigitText: viewModel.weightLbsSecondText, firstDigitArray: viewModel.weightLbsFirst, secondDigitArray: viewModel.weightLbsSecond, wheelTitle: viewModel.weightTitle)
+                               
+                                singleWheelView(firstDigit: $viewModel.heightFirstMetricDigit, digitText: viewModel.weightLbsText, wheelTitle: viewModel.weightTitle)
                                 
                                 
                                 Spacer()
@@ -121,7 +122,7 @@ struct ContentView: View {
                     
                     .cornerRadius(15.0)
                     
-                    Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age)) & \(viewModel.convertToDouble(first: viewModel.weightFirstImperialDigit, second: viewModel.weightSecondImperialDigit))")
+                    Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age))")
                     
                     
                     

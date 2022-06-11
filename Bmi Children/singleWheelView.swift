@@ -19,8 +19,9 @@ struct singleWheelView: View {
     
     
     
-    @State var heightCm = 10...200
+    
     @State var wheelTitle: String
+    @State var firstDigitArray = 10...230
 
     
     
@@ -50,7 +51,7 @@ struct singleWheelView: View {
         HStack(spacing: 0) {
            
             Picker("", selection: $firstDigit) {
-                ForEach(heightCm, id:\.self) {
+                ForEach(firstDigitArray, id:\.self) {
                     Text("\($0)")
                 }
                 

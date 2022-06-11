@@ -14,8 +14,8 @@ final class bmiViewModel: ObservableObject  {
     @Published var weightSecondMetricDigit = 0
     @Published var heightFirstMetricDigit = 160
     @Published var heightSecondMetricDigit = 1
-    @Published var weightFirstImperialDigit = 30
-    @Published var weightSecondImperialDigit = 0
+    @Published var weightFirstImperialDigit = 50
+    
     @Published var heightFirstImperialDigit = 2
     @Published var heightSecondImperialDigit = 1
     
@@ -24,7 +24,7 @@ final class bmiViewModel: ObservableObject  {
     let heightFirstDigitText: String = "ft"
     let heightSecondDigitText: String = "in"
     let weightLbsText: String = "lbs"
-    let weightLbsSecondText = ""
+    
     
     let heightTitle = "Height"
     let weightTitle = "Weight"
@@ -36,11 +36,13 @@ final class bmiViewModel: ObservableObject  {
     
     @Published var weightKg = 10...200
     @Published var weightGr = 0...9
+    @Published var weightLbs = 10...230
     
     @Published var heightFt = 2...7
     @Published var heightInch = 0...11
-    @Published var weightLbsFirst = 10...150
-    @Published var weightLbsSecond = 0...9
+    @Published var heightCm = 70...200
+    
+    
     var doubleString = ""
     var converted: Double = 0.0
     
