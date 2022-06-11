@@ -14,7 +14,7 @@ struct singleWheelView: View {
    
     
     
-    var digitText: String = "cm"
+    @State var digitText: String = "cm"
    
     
     

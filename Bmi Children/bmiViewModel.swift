@@ -6,14 +6,14 @@
 //
 
 import Foundation
-final class bmiViewModel: ObservableObject  {
+class bmiViewModel: ObservableObject  {
     
     @Published var sex = "boy"
     @Published var unit = "metric"
     @Published var weightFirstMetricDigit = 60
     @Published var weightSecondMetricDigit = 0
     @Published var heightFirstMetricDigit = 160
-    @Published var heightSecondMetricDigit = 1
+    
     @Published var weightFirstImperialDigit = 50
     
     @Published var heightFirstImperialDigit = 2
