@@ -9,11 +9,15 @@ import SwiftUI
 
 struct resultView: View {
     
-    @State var sex = "female"
+    @StateObject private var viewModel = bmiViewModel()
+    
+    @State var sex = ""
+    @State var result: Double = 1.1
+    
     
     
     var body: some View {
-        Text("The result is \(sex)")
+        Text("The result is \(sex) & and Bmi is \(result)")
     }
 }
 

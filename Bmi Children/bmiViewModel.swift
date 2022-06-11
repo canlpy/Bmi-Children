@@ -45,6 +45,7 @@ class bmiViewModel: ObservableObject  {
     
     var doubleString = ""
     var converted: Double = 0.0
+    @Published var bmi: Double = 0
     
     
     
@@ -56,6 +57,20 @@ class bmiViewModel: ObservableObject  {
         converted = Double(doubleString) ?? 0
         return converted
         }
+    
+    
+    func result(weight: Int, height: Int) -> Double {
+      bmi = Double(height) / Double(weight) 
+        return bmi
+        
+    }
+     
+     
+    
+    
+        
+        
 }
+
 
 

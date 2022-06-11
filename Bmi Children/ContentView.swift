@@ -99,13 +99,17 @@ struct ContentView: View {
                     }  // vstackchild
                     
                     
-                    NavigationLink(destination: resultView(sex: viewModel.sex), isActive: $viewModel.isShowingResultsView) { EmptyView() }
+                    NavigationLink(destination: resultView(sex: viewModel.sex, result: viewModel.bmi), isActive: $viewModel.isShowingResultsView) { EmptyView() }
                     
                     
                     Button("Calculate Bmi") {
                         
-                        print("glkjdf")
+                     
                         self.viewModel.isShowingResultsView = true
+                        
+                        viewModel.bmi = viewModel.result(weight: viewModel.weightFirstMetricDigit, height: viewModel.heightFirstMetricDigit)
+                        
+                        
                         
                         
                     }
@@ -122,7 +126,7 @@ struct ContentView: View {
                     
                     .cornerRadius(15.0)
                     
-                    Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age))")
+                    Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age)) & \(viewModel.bmi)")
                     
                     
                     
