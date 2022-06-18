@@ -29,7 +29,7 @@ class bmiViewModel: ObservableObject  {
     let heightTitle = "Height"
     let weightTitle = "Weight"
     
-    @Published var result = ""
+    
     @Published var age: Float = 6.0
     @Published var isShowingResultsView = false
     
@@ -44,7 +44,7 @@ class bmiViewModel: ObservableObject  {
     
     
     var doubleString = ""
-    var converted: Double = 0.0
+    @Published var converted: Double = 0.0
     @Published var bmi: Double = 0
     
     
@@ -59,8 +59,8 @@ class bmiViewModel: ObservableObject  {
         }
     
     
-    func result(weight: Int, height: Int) -> Double {
-      bmi = Double(weight) / Double(height) / Double(height) * 10000
+    func result(weight: Double, height: Double) -> Double {
+      bmi = weight / height / height * 10000
         return bmi
         
     }

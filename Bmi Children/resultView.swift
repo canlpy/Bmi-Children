@@ -16,6 +16,9 @@ struct resultView: View {
     
     
     
+    
+    
+    
     var body: some View {
         Text("The result is \(sex) & and Bmi is \(result)")
     }

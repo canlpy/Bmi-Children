@@ -107,7 +107,17 @@ struct ContentView: View {
                      
                         self.viewModel.isShowingResultsView = true
                         
-                        viewModel.bmi = viewModel.result(weight: viewModel.weightFirstMetricDigit, height: viewModel.heightFirstMetricDigit)
+                        if viewModel.unit == "metric"  {
+                            
+                            viewModel.converted = viewModel.convertToDouble(first: viewModel.weightFirstMetricDigit, second: viewModel.weightSecondMetricDigit)
+                        
+                        viewModel.bmi = viewModel.result(weight: viewModel.converted, height: Double(viewModel.heightFirstMetricDigit))
+                            
+                        }   else {
+                            viewModel.bmi = viewModel.result(weight: Double(viewModel.heightFirstImperialDigit), height: Double(viewModel.heightFirstMetricDigit))
+                            
+                            
+                        }
                         
                         
                         
@@ -126,7 +136,7 @@ struct ContentView: View {
                     
                     .cornerRadius(15.0)
                     
-                    Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age)) & \(viewModel.bmi)")
+                    Text("can \(viewModel.unit) & \(viewModel.sex) & \(Int(viewModel.age)) & \(viewModel.converted)")
                     
                     
                     
