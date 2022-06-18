@@ -60,7 +60,7 @@ class bmiViewModel: ObservableObject  {
     
     
     func result(weight: Int, height: Int) -> Double {
-      bmi = Double(height) / Double(weight) 
+      bmi = Double(weight) / Double(height) / Double(height) * 10000
         return bmi
         
     }
