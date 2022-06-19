@@ -73,7 +73,7 @@ struct ContentView: View {
                                 
                                 
                                
-                                singleWheelView(firstDigit: $viewModel.heightFirstMetricDigit, digitText: viewModel.weightLbsText, wheelTitle: viewModel.weightTitle)
+                                singleWheelView(firstDigit: $viewModel.weightFirstImperialDigit, digitText: viewModel.weightLbsText, wheelTitle: viewModel.weightTitle)
                                 
                                 
                                 Spacer()
@@ -111,10 +111,11 @@ struct ContentView: View {
                             
                             viewModel.converted = viewModel.convertToDouble(first: viewModel.weightFirstMetricDigit, second: viewModel.weightSecondMetricDigit)
                         
-                        viewModel.bmi = viewModel.result(weight: viewModel.converted, height: Double(viewModel.heightFirstMetricDigit))
+                        viewModel.bmi = viewModel.resultMetric(weight: viewModel.converted, height: Double(viewModel.heightFirstMetricDigit))
                             
                         }   else {
-                            viewModel.bmi = viewModel.result(weight: Double(viewModel.heightFirstImperialDigit), height: Double(viewModel.heightFirstMetricDigit))
+                            viewModel.converted = viewModel.calculateInchHeight(feet: viewModel.heightFirstImperialDigit, inch: viewModel.heightSecondImperialDigit)
+                            viewModel.bmi = viewModel.resultImperial(weight: Double(viewModel.weightFirstImperialDigit), height: Double(viewModel.converted))
                             
                             
                         }

@@ -58,8 +58,18 @@ class bmiViewModel: ObservableObject  {
         return converted
         }
     
+    func calculateInchHeight(feet: Int, inch: Int) -> Double {
+        converted = Double((feet * 12) + inch)
+        return converted
+    }
     
-    func result(weight: Double, height: Double) -> Double {
+    func resultImperial(weight: Double, height: Double) -> Double {
+        bmi = weight / height / height * 703
+        return bmi
+    }
+    
+    
+    func resultMetric(weight: Double, height: Double) -> Double {
       bmi = weight / height / height * 10000
         return bmi
         
