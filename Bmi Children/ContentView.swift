@@ -99,7 +99,12 @@ struct ContentView: View {
                     }  // vstackchild
                     
                     
-                    NavigationLink(destination: resultView(sex: viewModel.sex, result: viewModel.bmi), isActive: $viewModel.isShowingResultsView) { EmptyView() }
+                    NavigationLink(
+                        
+                        destination: resultView(sex: viewModel.sex, result: viewModel.bmi),
+                        isActive: $viewModel.isShowingResultsView,
+                        label: { EmptyView() }
+                        )
                     
                     
                     Button("Calculate Bmi") {

@@ -13,6 +13,7 @@
 		36547A092832A8BE009D9375 /* wheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36547A082832A8BD009D9375 /* wheelView.swift */; };
 		36AC6ECF284F432E0043DB9F /* singleWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AC6ECE284F432E0043DB9F /* singleWheelView.swift */; };
 		36AC6ED1284F7D790043DB9F /* bmiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AC6ED0284F7D790043DB9F /* bmiViewModel.swift */; };
+		36B11FA22860B6DC003A24BE /* GaugeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 36B11FA12860B6DC003A24BE /* GaugeKit */; };
 		36B2FF8E28253DA0007F1F82 /* Bmi_ChildrenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B2FF8D28253DA0007F1F82 /* Bmi_ChildrenApp.swift */; };
 		36B2FF9028253DA0007F1F82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B2FF8F28253DA0007F1F82 /* ContentView.swift */; };
 		36B2FF9228253DA4007F1F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B2FF9128253DA4007F1F82 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B11FA22860B6DC003A24BE /* GaugeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +106,9 @@
 			dependencies = (
 			);
 			name = "Bmi Children";
+			packageProductDependencies = (
+				36B11FA12860B6DC003A24BE /* GaugeKit */,
+			);
 			productName = "Bmi Children";
 			productReference = 36B2FF8A28253DA0007F1F82 /* Bmi Children.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 36B2FF8128253DA0007F1F82;
+			packageReferences = (
+				36B11FA02860B6DC003A24BE /* XCRemoteSwiftPackageReference "gaugekit" */,
+			);
 			productRefGroup = 36B2FF8B28253DA0007F1F82 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +377,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36B11FA02860B6DC003A24BE /* XCRemoteSwiftPackageReference "gaugekit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/antonmartinsson/gaugekit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36B11FA12860B6DC003A24BE /* GaugeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36B11FA02860B6DC003A24BE /* XCRemoteSwiftPackageReference "gaugekit" */;
+			productName = GaugeKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36B2FF8228253DA0007F1F82 /* Project object */;
 }

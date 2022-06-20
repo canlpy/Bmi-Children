@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import GaugeKit
 
 struct resultView: View {
+    
+    
     
     @StateObject private var viewModel = bmiViewModel()
     
@@ -19,8 +22,17 @@ struct resultView: View {
     
     
     
+    
     var body: some View {
-        Text("The result is \(sex) & and Bmi is \(result)")
+        VStack {
+            Text("The result is \(sex) & and Bmi is \(result)")
+            GaugeView(title: "Speed", value: Int(result), colors: [.red, .yellow, .green, .green, .yellow, .red])
+                .frame(width: 300, height: 300, alignment: .trailing)
+        }
+        
+        
+        
+        
     }
 }
 
